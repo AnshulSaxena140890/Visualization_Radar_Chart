@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{%block content %}
+
+<h3 style="text-align: center;">Radar Graph on {{division}} basis<h3>
+
+
+<div class="center">
+<iframe width="800" height="800" frameborder="0" scrolling="no" src="{{obj3}}"></iframe>
+</div>
+
+
+<div class="FormAlign">
+ <form method="POST">
+
+
+ 	{% csrf_token %}
+ 	{{ form.as_p }}
+  <input type="radio" name="type" value="topic" checked>Topic <br>
+  <input type="radio" name="type" value="region"> Region<br>
+  <input type="radio" name="type" value="sector"> Sector<br>
+  <input type="radio" name="type" value="pestle"> Pestle<br>
+  <input type ="radio" name="type" value="year"> Year<br>
+
+  <input type="Submit" name="submit" value="Submit"/>
+</form> 
+
+</div>
+{% endblock %}
